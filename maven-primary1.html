@@ -20,26 +20,40 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="这是ensember的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="土耳其冰淇淋">
-<meta property="og:url" content="http://example.com/index.html">
+    <meta name="description" content="配置Maven的注意事项关于在&#x2F;maven&#x2F;conf文件夹中的settings.xml配置文件修改 本地仓库配置 maven启动后，会自动保存下载的资源到本地仓库 默认位置： 1&lt;localRepository&gt;$&amp;#123;user.home&amp;#125;&#x2F;.m2&#x2F;repository&lt;&#x2F;localRepository&gt;  当前目录位置为登录用户名所在目录下的.m2文件夹中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Maven初步学习（配置及简单项目）">
+<meta property="og:url" content="http://example.com/maven-primary1.html">
 <meta property="og:site_name" content="土耳其冰淇淋">
-<meta property="og:description" content="这是ensember的博客">
+<meta property="og:description" content="配置Maven的注意事项关于在&#x2F;maven&#x2F;conf文件夹中的settings.xml配置文件修改 本地仓库配置 maven启动后，会自动保存下载的资源到本地仓库 默认位置： 1&lt;localRepository&gt;$&amp;#123;user.home&amp;#125;&#x2F;.m2&#x2F;repository&lt;&#x2F;localRepository&gt;  当前目录位置为登录用户名所在目录下的.m2文件夹中">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/03/05/2DEfCiQUFuM4sS6.png">
+<meta property="og:image" content="https://s2.loli.net/2022/03/05/2Llc6XMF3SHYDNV.png">
+<meta property="og:image" content="https://s2.loli.net/2022/03/05/ZHJfT7CGk3mloDN.png">
+<meta property="og:image" content="https://s2.loli.net/2022/03/05/JDvsyYdz4NxPHpA.png">
+<meta property="og:image" content="https://s2.loli.net/2022/03/05/j4NYvuQwp3VhreJ.png">
+<meta property="og:image" content="https://s2.loli.net/2022/03/05/LGWuigUoCRjAq7t.png">
+<meta property="og:image" content="https://s2.loli.net/2022/03/05/OmvQzJZd3EycFbW.png">
+<meta property="og:image" content="https://s2.loli.net/2022/03/05/BA8byFlwCRXzPsL.png">
+<meta property="og:image" content="https://s2.loli.net/2022/03/05/NHRsWtdPe3XMDaF.png">
+<meta property="og:image" content="https://s2.loli.net/2022/03/05/aUQYxr3jERwv8dt.png">
+<meta property="article:published_time" content="2022-03-04T21:15:53.000Z">
+<meta property="article:modified_time" content="2022-03-04T21:23:23.153Z">
 <meta property="article:author" content="Ensember">
-<meta property="article:tag" content="Java, redis, maven">
+<meta property="article:tag" content="Maven">
+<meta property="article:tag" content="Redis">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/03/05/2DEfCiQUFuM4sS6.png">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/maven-primary1.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/maven-primary1.html","path":"maven-primary1.html","title":"Maven初步学习（配置及简单项目）"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>土耳其冰淇淋</title>
+<title>Maven初步学习（配置及简单项目） | 土耳其冰淇淋</title>
   
 
 
@@ -66,7 +80,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">土耳其冰淇淋</h1>
+      <p class="site-title">土耳其冰淇淋</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">Maraş dondurması</p>
@@ -95,7 +109,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -108,6 +122,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEMaven%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">1.</span> <span class="nav-text">配置Maven的注意事项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E5%9C%A8-maven-conf%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E7%9A%84settings-xml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BF%AE%E6%94%B9"><span class="nav-number">1.1.</span> <span class="nav-text">关于在&#x2F;maven&#x2F;conf文件夹中的settings.xml配置文件修改</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E9%85%8D%E7%BD%AE"><span class="nav-number">1.1.1.</span> <span class="nav-text">本地仓库配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E9%85%8D%E7%BD%AE"><span class="nav-number">1.1.2.</span> <span class="nav-text">远程仓库配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93%E9%85%8D%E7%BD%AE"><span class="nav-number">1.1.3.</span> <span class="nav-text">镜像仓库配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86"><span class="nav-number">1.1.4.</span> <span class="nav-text">补充知识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.5.</span> <span class="nav-text">配置中出现的问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven%E9%A1%B9%E7%9B%AE%EF%BC%88%E6%89%8B%E5%B7%A5%E5%88%B6%E4%BD%9C%EF%BC%89%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">2.</span> <span class="nav-text">Maven项目（手工制作）注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven%E9%A1%B9%E7%9B%AE%EF%BC%88%E6%89%8B%E5%B7%A5%E5%88%B6%E4%BD%9C%EF%BC%89%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9-1"><span class="nav-number">3.</span> <span class="nav-text">Maven项目（手工制作）注意事项</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -153,16 +168,17 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/maven-primary1.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -176,13 +192,13 @@
     </span>
     
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 土耳其冰淇淋">
+      <meta itemprop="name" content="Maven初步学习（配置及简单项目） | 土耳其冰淇淋">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/maven-primary1.html" class="post-title-link" itemprop="url">Maven初步学习（配置及简单项目）</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Maven初步学习（配置及简单项目）
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -206,7 +222,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="配置Maven的注意事项"><a href="#配置Maven的注意事项" class="headerlink" title="配置Maven的注意事项"></a>配置Maven的注意事项</h2><h3 id="关于在-maven-conf文件夹中的settings-xml配置文件修改"><a href="#关于在-maven-conf文件夹中的settings-xml配置文件修改" class="headerlink" title="关于在/maven/conf文件夹中的settings.xml配置文件修改"></a>关于在/maven/conf文件夹中的<code>settings.xml</code>配置文件修改</h3><p><img src="https://s2.loli.net/2022/03/05/2DEfCiQUFuM4sS6.png" alt="image-20220304165919536"></p>
+        <h2 id="配置Maven的注意事项"><a href="#配置Maven的注意事项" class="headerlink" title="配置Maven的注意事项"></a>配置Maven的注意事项</h2><h3 id="关于在-maven-conf文件夹中的settings-xml配置文件修改"><a href="#关于在-maven-conf文件夹中的settings-xml配置文件修改" class="headerlink" title="关于在/maven/conf文件夹中的settings.xml配置文件修改"></a>关于在/maven/conf文件夹中的<code>settings.xml</code>配置文件修改</h3><p><img src="https://s2.loli.net/2022/03/05/2DEfCiQUFuM4sS6.png" alt="image-20220304165919536"></p>
 <h4 id="本地仓库配置"><a href="#本地仓库配置" class="headerlink" title="本地仓库配置"></a>本地仓库配置</h4><ul>
 <li><p>maven启动后，会自动保存下载的资源到本地仓库</p>
 <p>默认位置：</p>
@@ -331,7 +347,6 @@
 </li>
 </ol>
 
-      
     </div>
 
     
@@ -339,93 +354,26 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-tags">
+              <a href="/tags/Maven/" rel="tag"># Maven</a>
+              <a href="/tags/Redis/" rel="tag"># Redis</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/hello-world.html" rel="prev" title="Hello World">
+                  <i class="fa fa-chevron-left"></i> Hello World
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/hello-world.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ensember">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="土耳其冰淇淋">
-      <meta itemprop="description" content="这是ensember的博客">
-    </span>
-    
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 土耳其冰淇淋">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/hello-world.html" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2022-03-03 15:57:00 / 修改时间：15:29:16" itemprop="dateCreated datePublished" datetime="2022-03-03T15:57:00+08:00">2022-03-03</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
 
 
